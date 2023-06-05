@@ -1,0 +1,33 @@
+# Editor config file for the project.
+# See https://EditorConfig.org for more information.
+
+root = true
+
+# Configuration for all file types
+[*]
+# Set charset to UTF-8
+charset = utf-8
+
+# Set Unix end of line character
+end_of_line = lf
+
+# Insert new line at the end of the file
+insert_final_newline = true
+
+# Set 2 spaces indentation
+indent_style = space
+indent_size = 2
+
+# trim trailing whitespaces
+trim_trailing_whitespace = true
+
+# Configuration for .py files
+[.py]
+# Set 4 spaces indentation
+indent_style = space
+indent_size = 4
+
+# Configuration for Makefile
+[Makefile]
+# Set indentation style to tab character
+indent_style = tab
