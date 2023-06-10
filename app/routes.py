@@ -1,5 +1,8 @@
 """Routes, same as url confs in Django."""
 
+
+from flask import render_template
+
 from app import app
 
 
@@ -7,4 +10,5 @@ from app import app
 @app.route('/index')
 def index():
     """Index view."""
-    return 'Добро пожаловать в Daisy world!'
+    user = {'username': 'Всеволод'}
+    return render_template('index.html', title='Главная Страница', user=user)
