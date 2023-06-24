@@ -7,6 +7,8 @@ name = "pypi"
 flask = "*"
 pytz = "*"
 flask-wtf = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
 
 [dev-packages]
 flake8 = "*"
