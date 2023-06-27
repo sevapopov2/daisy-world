@@ -1,11 +1,12 @@
 """Database models structure in ORM."""
 
+from flask_login import UserMixin
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from app import db
+from app import db, login
 
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     """User db model."""
 
     userid = db.Column(db.Integer, primary_key=True)
@@ -39,3 +40,9 @@ class Book(db.Model):
     def __repr__(self):
         """Class representation when printing."""
         return '<Book {}>'.format(self.book_name)
+
+
+@login.user_loader
+def load_user(user_id):
+    """Get user id from database for user loader."""
+    return User.query.get(int(user_id))
