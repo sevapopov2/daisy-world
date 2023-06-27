@@ -23,6 +23,9 @@ class User(db.Model, UserMixin):
         """Check password hash method."""
         return check_password_hash(self.password_hash, password)
 
+    def get_id(self):
+        """Fix id attribute error for login_user class by overriding the method."""
+        return (self.user_id)
 
     def __repr__(self):
         """Format representation of data in class when printed. Used in debug."""
