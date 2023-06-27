@@ -24,3 +24,7 @@ class Book(db.Model):
     book_name = db.Column(db.String(100))
     book_author = db.Column(db.String(100))
     user_id = db.Column(db.Integer, db.ForeignKey('user.userid'))
+
+    def __repr__(self):
+        """Class representation when printing."""
+        return '<Book {}>'.format(self.book_name)
